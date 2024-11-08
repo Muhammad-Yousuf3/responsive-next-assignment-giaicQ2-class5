@@ -27,7 +27,7 @@ function Header(){
 
                 <button onClick={navBtn} className="hover:text-cyan-500 sm:hidden block text-[7vw] pr-[2vw]"><i className="ri-menu-line"></i></button>
                 
-                <nav className={`bg-cyan-500 h-[15%] w-[50%] sm:h-auto sm:w-auto sm:bg-white fixed top-0 right-0 ${navOpen? 'translate-x-0' : 'translate-x-full'} sm:static  sm:mr-96`}>
+                <nav className={`bg-cyan-500 h-auto w-[50%] sm:h-auto sm:w-auto sm:bg-white fixed top-0 right-0 ${navOpen? 'translate-x-0' : 'translate-x-full'} sm:static  sm:mr-96`}>
                     <ul className="flex flex-col sm:flex-row -mt-5 sm:mt-0 sm:gap-4 pr-[2vw] text-white sm:text-black pl-2">
                         <button onClick={navBtn} className="ml-36 mt-10 sm:hidden ">X</button>
                     <li className="sm:hover:text-cyan-500"><Link href={"/"}>Home</Link></li>
