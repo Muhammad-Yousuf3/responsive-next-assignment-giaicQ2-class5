@@ -1,6 +1,13 @@
+"use client"
 import Link from "next/link"
+import { useState } from "react"
 
 function Header(){
+    
+    const [navOpen,navClose]= useState(false)
+
+    const navBtn=()=>navClose(!navOpen);
+    
     return(
         <main className="w-screen max-w-full">
               <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
@@ -15,19 +22,22 @@ function Header(){
             </section>
 
             {/* NavBar */}
-            <section className="flex justify-between items-center sm:h-[10vh] md:mt-[0vw]  w-350:-mt-[0vw] w-350:h-[20vw]">
+            <section className={` flex justify-between items-center sm:h-[10vh] md:mt-[0vw] -mt-[0vw] h-[20vw] ${navOpen? 'h-[40vw]': 'h-[20vw]'}`}>
                 <h2 className="md:pl-[1vw] sm:text-[2.2vw] font-bold w-350:text-[8vw] w-350:pl-[2vw]">TruckIn</h2>
 
-                <nav className="w-350:hidden sm:block">
-                    <ul className="flex sm:gap-[4vw] pr-[2vw] ">
-                    <li className="hover:text-cyan-500"><Link href={"/"}>Home</Link></li>
-                <li className="hover:text-cyan-500"><Link href={"#services"}>Services</Link></li>
-                <li className="hover:text-cyan-500"><Link href={"#about"}>About</Link></li>
-                <li className="hover:text-cyan-500"><Link href={"#contact"}>Contact</Link></li>
-                <li className="hover:text-cyan-500"><i className="fa fa-user"></i> <Link href={""}>LOGIN</Link></li>
+                <button onClick={navBtn} className="hover:text-cyan-500 sm:hidden block text-[7vw] pr-[2vw]"><i className="ri-menu-line"></i></button>
+                
+                <nav className={`bg-cyan-500 h-[50%] w-[50%] sm:h-auto sm:w-auto sm:bg-white fixed top-0 right-0 ${navOpen? 'translate-x-0' : 'translate-x-full'} sm:static  sm:mr-96`}>
+                    <ul className="flex flex-col sm:flex-row -mt-5 sm:mt-0 sm:gap-4 pr-[2vw] text-white sm:text-black pl-2">
+                        <button onClick={navBtn} className="ml-24 mt-10 sm:hidden ">X</button>
+                    <li className="sm:hover:text-cyan-500"><Link href={"/"}>Home</Link></li>
+                <li className="sm:hover:text-cyan-500"><Link href={"#services"}>Services</Link></li>
+                <li className="sm:hover:text-cyan-500"><Link href={"#about"}>About</Link></li>
+                <li className="sm:hover:text-cyan-500"><Link href={"#contact"}>Contact</Link></li>
+                <li className="sm:hover:text-cyan-500"><i className="fa fa-user"></i> <Link href={""}>LOGIN</Link></li>
                     </ul>
                 </nav>
-                <p className="hover:text-cyan-500 md:hidden sm:hidden w-350:block w-350:text-[7vw] w-350:pr-[2vw]"><i className="ri-menu-line"></i></p>
+               
             </section>
             
 
