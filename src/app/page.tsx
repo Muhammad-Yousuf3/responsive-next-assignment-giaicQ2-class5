@@ -5,7 +5,7 @@ function Mainpage(){
         <main className="w-screen max-w-full scroll-smooth">
             {/* Image */}
             <section className="relative">
-            <Image src={"/slider-bg.jpg"} alt={"Truck"} width={"500"} height={"100"} id="Home" className="w-[100%] md:h-auto w-350:h-[63vh]"></Image>
+            <Image src={"/slider-bg.jpg"} alt={"Truck"} width={"500"} height={"100"} id="Home" className="w-[100%] md:h-auto w-350:h-[66vh]"></Image>
                 
             <section className="bg-black opacity-80 absolute inset-0"></section>
 
